@@ -43,12 +43,12 @@ angular.module('tinnr', [
       url: '/meals',
       controller: 'MealsController',
       authenticate: true
-    })          //Sergey's Calendar//
+    })
     .state('calendar', {
       templateUrl: 'app/calendar/calendar.html',
       url: '/calendar',
       controller: 'CalendarController',
-      authenticate: true
+      // authenticate: true
     })
     ;
 

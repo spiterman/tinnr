@@ -8,7 +8,7 @@ var Q = require('q');
 
 module.exports = {
   getDate: function(req, res, next){
-    console.log('We got the date!');
+    console.log('We got the Meals!');
     res.status(200);
     res.send('This is the response working properly!')
   }
