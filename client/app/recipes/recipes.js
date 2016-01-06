@@ -1,4 +1,4 @@
-angular.module('tinnr.recipes', [])
+angular.module('tinnr.recipes', ['hmTouchEvents'])
   .controller('RecipesController', ['$scope', 'Recipes', 'Meals', 'Auth', 'User', function ($scope, Recipes, Meals, Auth, User) {
     $scope.currentIndex = 0;
     $scope.recipes = [];
