@@ -3,7 +3,8 @@ angular.module('tinnr', [
   'tinnr.usersServices',
   'tinnr.recipesServices',
   'tinnr.mealsServices',
-  'tinnr.calendarServices',   //Sergey's Calendar//
+  'tinnr.calendarServices',
+  'tinnr.calendar',   //Sergey's Calendar//
   'tinnr.navbarDirectives',
   'tinnr.alertsDirectives',
   'tinnr.auth',
