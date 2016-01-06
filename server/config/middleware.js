@@ -8,7 +8,7 @@ module.exports = function(app, express) {
   var recipesRouter = express.Router();
 
   //Sergey's Calendar//
-  // var calendarRouter = express.Router();
+  var calendarRouter = express.Router();
 
   app.use(morgan('dev'));
   app.use(bodyParser.urlencoded({extended: true}));
@@ -19,7 +19,7 @@ module.exports = function(app, express) {
   app.use('/api/recipes', recipesRouter);
 
   //Sergey's Calendar//
-  // app.use('/api/recipes', calendarRouter);
+  app.use('/api/calendar', calendarRouter);
 
   app.use('*', function(req, res) {
     res.status(404).send('404: Page not found');
@@ -29,7 +29,7 @@ module.exports = function(app, express) {
   require('../recipes/recipeRoutes.js')(recipesRouter);
 
   //Sergey's Calendar//
-  // require('../calendar/calendarRoutes.js')(calendarRouter);
+  require('../calendar/calendarRoutes.js')(calendarRouter);
 
   app.use(utils.logError);
   app.use(utils.handleError);

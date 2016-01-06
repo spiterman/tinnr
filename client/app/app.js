@@ -3,6 +3,7 @@ angular.module('tinnr', [
   'tinnr.usersServices',
   'tinnr.recipesServices',
   'tinnr.mealsServices',
+  'tinnr.calendarServices',   //Sergey's Calendar//
   'tinnr.navbarDirectives',
   'tinnr.alertsDirectives',
   'tinnr.auth',
@@ -42,7 +43,7 @@ angular.module('tinnr', [
       url: '/meals',
       controller: 'MealsController',
       authenticate: true
-    })
+    })          //Sergey's Calendar//
     .state('calendar', {
       templateUrl: 'app/calendar/calendar.html',
       url: '/calendar',
