@@ -15,6 +15,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="recipes">Recipes</a></li>
         <li><a ui-sref="meals" ng-show="isLoggedIn()">My Meals</a></li>
+
+        <!-- Sergey's Calendar -->
+        <li><a ui-sref="calendar" ng-show="isLoggedIn()">My Calendar</a></li>
+        <!-- End -->
+
         <li><a ui-sref="signup" ng-show="!isLoggedIn()">Sign Up</a></li>
         <li><a ui-sref="signin" ng-show="!isLoggedIn()">Sign In</a></li>
         <li><a href="" ng-click="signout()" ng-show="isLoggedIn()">Sign Out</a></li>

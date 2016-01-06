@@ -42,7 +42,14 @@ angular.module('tinnr', [
       url: '/meals',
       controller: 'MealsController',
       authenticate: true
-    });
+    })
+    .state('calendar', {
+      templateUrl: 'app/calendar/calendar.html',
+      url: '/calendar',
+      controller: 'CalendarController',
+      authenticate: true
+    })
+    ;
 
   $httpProvider.interceptors.push('AttachTokens');
 })
@@ -75,7 +82,7 @@ angular.module('tinnr', [
       $state.go('signin');
     } else if (((toState.name === 'signup') || (toState.name === 'signin')) && Auth.isAuth()) {
       event.preventDefault();
-      $state.go('meals');  
+      $state.go('meals');
     }
   });
 });
