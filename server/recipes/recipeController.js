@@ -6,14 +6,14 @@ var url = require('url');
 var Q = require('q');
 // commented out for deployment 
 // uncomment for development
-var apiInfo.API_ID = process.env.YUMMLY_API_ID;
-var apiInfo.API_KEY = process.env.YUMMLY_API_KEY;
+var apiInfoAPI_ID = process.env.YUMMLY_API_ID;
+var apiInfoAPI_KEY = process.env.YUMMLY_API_KEY;
 
 module.exports = {
   getRecipes: function(req, res, next) {
     // insert api id and api password
-    var YUMMLY_API_ID = apiInfo.API_ID;
-    var YUMMLY_API_KEY = apiInfo.API_KEY;
+    var YUMMLY_API_ID = apiInfoAPI_ID;
+    var YUMMLY_API_KEY = apiInfoAPI_KEY;
     var params = url.parse(req.url).query;
 
     if (url.parse(req.url).query) {
