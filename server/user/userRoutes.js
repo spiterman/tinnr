@@ -9,5 +9,6 @@ module.exports = function(app) {
   app.post('/meals', userController.saveMeal);
   app.post('/preferences', userController.saveDietPreferences);
   app.get('/preferences', userController.getDietPreferences);
+  //email notification route handler
   app.post('/email', sendGridController.getList);
 };
