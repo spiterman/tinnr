@@ -9,7 +9,7 @@ angular.module('tinnr.calendar', [])
         .then(function (res) {
           // $scope.offsets = $scope.cols - (res.data.length % $scope.cols);
           $scope.calendarMeals = _.chunk(res.data);
-          console.log($scope.calendarMeals, "line 14 calendar.js");
+          console.log($scope.calendarMeals)
         })
         .catch(function (error) {
           console.log('Error fetching meals', error);

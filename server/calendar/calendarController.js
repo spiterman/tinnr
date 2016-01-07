@@ -10,7 +10,6 @@ var User = require('../user/userModel.js');
 
 module.exports = {
   getCalendarMeals: function(req, res, next) {
-    console.log('getCalendarMeals in calController.js line 13')
     var token = req.headers['x-access-token'];
     if (!token) {
       next (new Error('no token'))
@@ -45,7 +44,6 @@ module.exports = {
         .then(function(foundUser) {
           if (foundUser && foundUser.calendarRecipes.indexOf(mealId) === -1) {
             foundUser.calendarRecipes.push(mealId);
-            console.log('meal added to calendar calController.js 48')
             Q.ninvoke(foundUser, 'save')
               .then(function() {
                 res.status(200).send();

@@ -3,13 +3,11 @@ angular.module('tinnr.calendarServices', [])
     var calendar = {};
 
     calendar.getCalendarMeals = function(param) {
-      console.log('getCalendarMeals in calendarServices line 6')
         return $http({
             method: 'GET',
             url: '/api/users/calendar'
         })
         .then(function (res) {
-          console.log('getCalendarMeals in calendarServices line 12')
             return res;
         }, function (res) {
             console.error('Error: ', res);
@@ -25,6 +23,7 @@ angular.module('tinnr.calendarServices', [])
     // };
 
     calendar.addCal = function (meal) {
+      console.log(meal, "meal line 26 calSer.js")
       return $http({
         method: 'POST',
         url: '/api/users/calendar',

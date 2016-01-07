@@ -9,16 +9,16 @@ angular.module('tinnr.meals', [])
         .then(function (res) {
           $scope.offsets = $scope.cols - (res.data.length % $scope.cols);
           $scope.meals = _.chunk(res.data, $scope.cols);
+          console.log($scope.meals, "meals.js line 12");
         })
         .catch(function (error) {
           console.log('Error fetching meals', error);
         });
     };
 
-    $scope.addCal = function(){
-      Calendar.addCal()
+    $scope.addCal = function(meal){
+      Calendar.addCal(meal)
         .then(function (res) {
-          console.log(res, "response was sent 23 meals.js")
         })
         .catch(function (error) {
           console.log(' Error fetch meals', error);
