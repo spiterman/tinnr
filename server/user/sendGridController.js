@@ -1,8 +1,8 @@
 var User = require('./userModel.js');
 var Q = require('q');
 var jwt = require('jwt-simple');
-var sendgridAPIKEY = process.env.SENDGRIDKEY || require('./emailAPIKey.js');
-var sendgrid  = require('sendgrid')(sendgridAPIKEY);
+var sendgridAPIKEY = require('./emailAPIKey.js');
+var sendgrid  = require('sendgrid')(sendgridAPIKEY.apiKEY);
 
 module.exports = {
 	getList: function(req, res, next) {
@@ -20,7 +20,7 @@ module.exports = {
 	    	//&&send with sendgrid
 			sendgrid.send({
 				  to:       user.username,
-				  from:     'noreply@tinnr.com',
+				  from:     'noreply@tinnrplusplus.com',
 				  subject:  'Your Meal Ingredients',
 				  text:     list
 				}, function(err, json) {
