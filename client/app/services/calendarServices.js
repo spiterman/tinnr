@@ -22,6 +22,17 @@ angular.module('tinnr.calendarServices', [])
 
     // };
 
+    calendar.addCal = function (meal) {
+      return $http({
+        method: 'POST',
+        url: '/api/users/calendar',
+        data: meal
+      })
+      .then( function (res) {
+        return res;
+      })
+    }
+
     return calendar;
 
   }]);
