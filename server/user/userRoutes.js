@@ -1,4 +1,5 @@
 var userController = require('./userController.js');
+var calendarController = require('../calendar/calendarController.js')
 
 module.exports = function(app) {
   app.post('/signin', userController.signin);
@@ -8,4 +9,6 @@ module.exports = function(app) {
   app.post('/meals', userController.saveMeal);
   app.post('/preferences', userController.saveDietPreferences);
   app.get('/preferences', userController.getDietPreferences);
+  app.post('/calendar', calendarController.addCal); 
+  app.get('/calendar', calendarController.getCalendarMeals);
 };

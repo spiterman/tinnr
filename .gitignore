@@ -33,6 +33,7 @@ client/lib/bootstrap-sass
 client/lib/font-awesome
 client/lib/jquery
 client/lib/lodash
+client/lib
 
 #Build 
 build

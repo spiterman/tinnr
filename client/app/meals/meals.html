@@ -16,6 +16,7 @@
                       ng-click="isCollapsed = !isCollapsed">
                 Ingredients
               </button>
+                <a class="btn btn-primary" ng-click="addCal()" role="button">Add to Cal</a>
               <div uib-collapse="isCollapsed" ng-init="isCollapsed = true">
                 <ol>
                   <li ng-repeat="ingredient in meal.ingredients">

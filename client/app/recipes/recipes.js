@@ -43,5 +43,15 @@ angular.module('tinnr.recipes', ['hmTouchEvents'])
         });
     };
 
+    // $scope.showRecipes = function(params) {
+    //   Recipes.showRecipes(params)
+    //     .then(function (data) {
+    //       $scope.recipes = JSON.parse(data);
+    //     })
+    //     .catch(function (error) {
+    //       console.error('Error fetching recipes: ', error);  
+    //     });
+    // };
+
     $scope.getRecipes($scope.preferences);
   }]);

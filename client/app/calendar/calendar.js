@@ -1,13 +1,22 @@
 angular.module('tinnr.calendar', [])
   .controller('CalendarController', ['$scope', 'Calendar', function ($scope, Calendar){
     // $scope.cols = 7;
-    // $scope.meals = [];
+    $scope.calendarMeals = [];
     // $scope.offsets = 0; //Not sure what this does
 
-    $scope.getDate = function() {
-      console.log('The getDate function works');
-    }
+    $scope.getCalendarMeals = function() {
+      Calendar.getCalendarMeals()
+        .then(function (res) {
+          // $scope.offsets = $scope.cols - (res.data.length % $scope.cols);
+          $scope.calendarMeals = _.chunk(res.data);
+          console.log($scope.calendarMeals, "line 14 calendar.js");
+        })
+        .catch(function (error) {
+          console.log('Error fetching meals', error);
+        });
+    };
 
-    $scope.getDate();
+
+    $scope.getCalendarMeals();
 
   }]);

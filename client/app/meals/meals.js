@@ -1,5 +1,5 @@
 angular.module('tinnr.meals', [])
-  .controller('MealsController', ['$scope', 'Meals', function ($scope, Meals) {
+  .controller('MealsController', ['$scope', 'Meals', 'Calendar', function ($scope, Meals, Calendar) {
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
@@ -12,6 +12,16 @@ angular.module('tinnr.meals', [])
         })
         .catch(function (error) {
           console.log('Error fetching meals', error);
+        });
+    };
+
+    $scope.addCal = function(){
+      Calendar.addCal()
+        .then(function (res) {
+          console.log(res, "response was sent 23 meals.js")
+        })
+        .catch(function (error) {
+          console.log(' Error fetch meals', error);
         });
     };
 

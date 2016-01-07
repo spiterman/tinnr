@@ -121,6 +121,7 @@ module.exports = {
         .then(function(foundUser) {
           if (foundUser && foundUser.savedRecipes.indexOf(mealId) === -1) {
             foundUser.savedRecipes.push(mealId);
+            // where DB query is happening.....?
             Q.ninvoke(foundUser, 'save')
               .then(function() {
                 res.status(200).send();

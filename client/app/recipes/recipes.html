@@ -1,6 +1,16 @@
 <div class="container-fluid main">
   <alerts></alerts>
   <h1>Recipes</h1>
+  <div class ="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="showRecipes()">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
   <div class="row row-flex recipe" ng-repeat="recipe in recipes" ng-hide="!isCurrentRecipe($index)">
     <div class="col-md-4">
       <div class="panel panel-default panel-preferences">
