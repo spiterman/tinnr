@@ -12,8 +12,8 @@ var apiInfo.API_KEY = process.env.YUMMLY_API_KEY || require('./apiKeys.js');
 module.exports = {
   getRecipes: function(req, res, next) {
     // insert api id and api password
-    var YUMMLY_API_ID = apiInfo.API_ID.API_ID;
-    var YUMMLY_API_KEY = apiInfo.API_KEY.API_KEY;
+    var YUMMLY_API_ID = apiInfo.API_ID;
+    var YUMMLY_API_KEY = apiInfo.API_KEY;
     var params = url.parse(req.url).query;
 
     if (url.parse(req.url).query) {
