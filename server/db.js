@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-
-var port = process.env.MONGOLAB_URI || 'mongodb://localhost/tinnr';
+var dbport = 'mongodb://tinnrplusplus:tinnrplusplus@ds039175.mongolab.com:39175/tinnrplusplus'
+var port = dbport || 'mongodb://localhost/tinnr';
 
 var db = mongoose.connect(port);
 
