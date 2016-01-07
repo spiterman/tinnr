@@ -27,7 +27,13 @@ pids
 
 # Dependency directories
 node_modules
-client/lib
+client/lib/angular
+client/lib/angular-bootstrap
+client/lib/angular-ui-router
+client/lib/bootstrap-sass
+client/lib/font-awesome
+client/lib/jquery
+client/lib/lodash
 
 #Build 
 build
