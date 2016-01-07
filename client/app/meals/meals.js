@@ -16,8 +16,6 @@ angular.module('tinnr.meals', [])
     };
 
     $scope.addCal = function(){
-      console.log('hello');
-      //modify Calendar
       Calendar.addCal()
         .then(function (res) {
           console.log(res, "response was sent 23 meals.js")

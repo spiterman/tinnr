@@ -9,10 +9,28 @@ var User = require('../user/userModel.js');
 
 
 module.exports = {
-  getDate: function(req, res, next) {
-    console.log('We got the Meals!');
-    res.status(200);
-    res.send('This is the response working properly!')
+  getCalendarMeals: function(req, res, next) {
+    console.log('getCalendarMeals in calController.js line 13')
+    var token = req.headers['x-access-token'];
+    if (!token) {
+      next (new Error('no token'))
+    } else {
+      var user = jwt.decode(token, 'secret');
+      var findUser = Q.nbind(User.findOne, User);
+      findUser({username: user.username})
+        .then(function(foundUser) {
+          if (foundUser) {
+            var recipes = foundUser.calendarRecipes;
+            res.status(200);
+            res.json(recipes);
+          } else {
+            res.status(401).send();
+          }
+        })
+        .fail(function(error) {
+          next(error);
+        });
+    }
   },
   addCal: function(req, res, next) {
     var token = req.headers['x-access-token'];
@@ -27,7 +45,7 @@ module.exports = {
         .then(function(foundUser) {
           if (foundUser && foundUser.calendarRecipes.indexOf(mealId) === -1) {
             foundUser.calendarRecipes.push(mealId);
-            // where DB query is happening.....?
+            console.log('meal added to calendar calController.js 48')
             Q.ninvoke(foundUser, 'save')
               .then(function() {
                 res.status(200).send();

@@ -9,5 +9,6 @@ module.exports = function(app) {
   app.post('/meals', userController.saveMeal);
   app.post('/preferences', userController.saveDietPreferences);
   app.get('/preferences', userController.getDietPreferences);
-  app.post('/calendar', calendarController.addCal); // cal f(x) unsure
+  app.post('/calendar', calendarController.addCal); 
+  app.get('/calendar', calendarController.getCalendarMeals);
 };
