@@ -6,8 +6,8 @@ var url = require('url');
 var Q = require('q');
 // commented out for deployment 
 // uncomment for development
-var apiInfo.API_ID = process.env.YUMMLY_API_ID || require('./apiKeys.js');
-var apiInfo.API_KEY = process.env.YUMMLY_API_KEY || require('./apiKeys.js');
+var apiInfo.API_ID = process.env.YUMMLY_API_ID;
+var apiInfo.API_KEY = process.env.YUMMLY_API_KEY;
 
 module.exports = {
   getRecipes: function(req, res, next) {
