@@ -11,4 +11,6 @@ module.exports = function(app) {
   app.get('/preferences', userController.getDietPreferences);
   //email notification route handler
   app.post('/email', sendGridController.getList);
+  //remove meal route
+  app.post('/remove', userController.removeFromSavedMeals);
 };

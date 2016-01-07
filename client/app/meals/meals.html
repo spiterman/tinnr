@@ -21,6 +21,11 @@
                       ng-click="getList(meal.ingredients)">
                 Email List
               </button>
+              <button type="button" 
+                      class="btn btn-default" 
+                      ng-click="removeMeal(meal)">
+                Remove Meal
+              </button>
               <div uib-collapse="isCollapsed" ng-init="isCollapsed = true">
                 <ol>
                   <li ng-repeat="ingredient in meal.ingredients">
