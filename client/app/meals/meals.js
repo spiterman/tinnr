@@ -3,6 +3,10 @@ angular.module('tinnr.meals', [])
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
+    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    $scope.selectedDay = '';
+    $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
+    $scope.selectedDay = '';
 
     $scope.getMeals = function() {
       Meals.getMeals()
@@ -22,6 +26,16 @@ angular.module('tinnr.meals', [])
         .catch(function (error) {
           console.log(' Error fetch meals', error);
         });
+    };
+
+    $scope.getSelectedDay = function(day) {
+      $scope.selectedDay = day;
+      console.log($scope.selectedDay);
+    };
+
+    $scope.getSelectedMeal = function(meal) {
+      $scope.selectedMeal = meal;
+      console.log($scope.selectedMeal);
     };
 
     $scope.getMeals();

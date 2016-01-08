@@ -5,22 +5,21 @@
         <div class="form-group col-xs-6">
         <label for="mealDay">Day</label>
         <select id="allowedDiet" 
-                class="form-control">
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-
-          </select>
+                class="form-control"
+                ng-model="selectedDay" 
+                ng-change="getSelectedDay(selectedDay)"
+                >
+              <option value={{day}} ng-repeat="day in days">{{day}}</option>
+        </select>
         </div>
         <div class="form-group col-xs-6">
         <label for="calendar">Meal</label>
         <select id="timeOfMeal" 
-                class="form-control">
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
+                class="form-control"
+                ng-model="selectedMeal" 
+                ng-change="getSelectedMeal(selectedMeal)"
+                >
+              <option value={{meal}} ng-repeat="meal in threeMeals">{{meal}}</option>
           </select>
         </div>
       </div>
