@@ -10,7 +10,12 @@
               <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
                 <!-- <h4>{{meal.recipeName}}</h4> -->
               </a>
-                <h6>On {{meal.selectedDay}} for {{meal.selectedMeal}}</h5>
+                <h5>On {{meal.selectedDay}} for {{meal.selectedMeal}}</h5>
+                <button type="button" 
+                      class="btn btn-default" 
+                      ng-click="removeMeal(meal)">
+                Remove Meal
+              </button>
             </div>
           </div>
         </div>
