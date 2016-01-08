@@ -9,7 +9,6 @@ angular.module('tinnr.meals', [])
         .then(function (res) {
           $scope.offsets = $scope.cols - (res.data.length % $scope.cols);
           $scope.meals = _.chunk(res.data, $scope.cols);
-          console.log($scope.meals, "meals.js line 12");
         })
         .catch(function (error) {
           console.log('Error fetching meals', error);
