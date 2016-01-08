@@ -1,8 +1,13 @@
 angular.module('tinnr.meals', [])
-  .controller('MealsController', ['$scope', 'Meals', '$window', function ($scope, Meals, $window) {
+
+  .controller('MealsController', ['$scope', 'Meals', '$window', 'Calendar' ,function ($scope, Meals, $window, Calendar) {
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
+    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    $scope.selectedDay = '';
+    $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
+    $scope.selectedDay = '';
 
     $scope.getMeals = function() {
       Meals.getMeals()
@@ -15,6 +20,27 @@ angular.module('tinnr.meals', [])
         });
     };
 
+    $scope.addCal = function(meal){
+      meal.selectedDay = $scope.selectedDay;
+      meal.selectedMeal = $scope.selectedMeal;
+      Calendar.addCal(meal)
+        .then(function (res) {
+        })
+        .catch(function (error) {
+          console.log(' Error fetch meals', error);
+        });
+    };
+
+    $scope.getSelectedDay = function(day) {
+      $scope.selectedDay = day;
+      console.log($scope.selectedDay);
+    };
+
+    $scope.getSelectedMeal = function(meal) {
+      $scope.selectedMeal = meal;
+      console.log($scope.selectedMeal);
+    };
+
     $scope.getList = function(ingredients) {
       //send ingredients to server via mealservices
       Meals.getList(ingredients);
@@ -24,7 +50,7 @@ angular.module('tinnr.meals', [])
       //send meal to remove to server
       Meals.removeMeal(meal);
       $window.location.reload();
-    }
-
+    };
+    
     $scope.getMeals();
   }]);
