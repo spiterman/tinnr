@@ -14,10 +14,8 @@ var UserSchema = new mongoose.Schema({
     required: true
   },
   salt: String,
-  //change savedRecipes to object
   savedRecipes: [],
-  //add savedRacipesIds for lookup and removal
-  savedRecipesIDs: [],
+  calendarRecipes: [], //for calendar 
   dietPreferences: {
     type: Object,
     default: {}

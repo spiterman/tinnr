@@ -43,5 +43,6 @@ angular.module('tinnr.recipes', ['hmTouchEvents'])
         });
     };
 
+
     $scope.getRecipes($scope.preferences);
   }]);
