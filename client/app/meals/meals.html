@@ -1,5 +1,30 @@
 <div class="container-fluid main">
   <h1>My Meals</h1>
+  <form class="form-preferences">
+    <div class="row row-flex">
+        <div class="form-group col-xs-6">
+        <label for="mealDay">Day</label>
+        <select id="allowedDiet" 
+                class="form-control">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+
+          </select>
+        </div>
+        <div class="form-group col-xs-6">
+        <label for="calendar">Meal</label>
+        <select id="timeOfMeal" 
+                class="form-control">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          </select>
+        </div>
+      </div>
+    </form>
     <div class="row row-flex" ng-repeat="row in meals">
         <div class="col-xs-6 col-md-3 meal" ng-repeat="meal in row">
           <div class="thumbnail">
@@ -16,7 +41,7 @@
                       ng-click="isCollapsed = !isCollapsed">
                 Ingredients
               </button>
-                <a class="btn btn-primary" ng-click="addCal()" role="button">Add to Cal</a>
+                <a class="btn btn-primary" ng-click="addCal(meal)" role="button">Add to Cal</a>
               <div uib-collapse="isCollapsed" ng-init="isCollapsed = true">
                 <ol>
                   <li ng-repeat="ingredient in meal.ingredients">

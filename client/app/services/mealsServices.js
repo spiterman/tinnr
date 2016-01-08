@@ -15,6 +15,7 @@ angular.module('tinnr.mealsServices', [])
     };
 
     meals.saveMeal = function (meal) {
+      console.log(meal, "mealSer.js line 18")
       return $http({
         method: 'POST',
         url: '/api/users/meals',

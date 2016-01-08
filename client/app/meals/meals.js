@@ -15,10 +15,9 @@ angular.module('tinnr.meals', [])
         });
     };
 
-    $scope.addCal = function(){
-      Calendar.addCal()
+    $scope.addCal = function(meal){
+      Calendar.addCal(meal)
         .then(function (res) {
-          console.log(res, "response was sent 23 meals.js")
         })
         .catch(function (error) {
           console.log(' Error fetch meals', error);
