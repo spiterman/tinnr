@@ -10,7 +10,8 @@ module.exports = function(app) {
   app.post('/meals', userController.saveMeal);
   app.post('/preferences', userController.saveDietPreferences);
   app.get('/preferences', userController.getDietPreferences);
-  app.post('/calendar', calendarController.addCal); 
+  app.post('/calendar', calendarController.addCal);
+  app.post('/removeFromCalendar', calendarController.removeFromCalendar); 
   app.get('/calendar', calendarController.getCalendarMeals);
   //email notification route handler
   app.post('/email', sendGridController.getList);

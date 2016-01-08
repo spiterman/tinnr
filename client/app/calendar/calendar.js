@@ -2,8 +2,7 @@ angular.module('tinnr.calendar', [])
   .controller('CalendarController', ['$scope', 'Calendar', function ($scope, Calendar){
     $scope.cols = 5;
     $scope.calendarMeals = [];
-    $scope.offsets = 0; //Not sure what this does
-    $scope.breakfast = [];
+    $scope.offsets = 0; 
 
     $scope.getCalendarMeals = function() {
       Calendar.getCalendarMeals()
@@ -17,6 +16,9 @@ angular.module('tinnr.calendar', [])
         });
     };
 
+    $scope.removeCalendarMeal = function(meal) {
+      Calendar.removeCalendarMeal(meal);
+    };
 
     $scope.getCalendarMeals();
 

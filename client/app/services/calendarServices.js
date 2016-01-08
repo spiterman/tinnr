@@ -18,9 +18,16 @@ angular.module('tinnr.calendarServices', [])
 
     // };
 
-    // calendar.deleteMeal = function() {
-
-    // };
+    calendar.removeCalendarMeal = function(meal) {
+      return $http({
+        method: 'POST',
+        url: 'api/users/removeFromCalendar',
+        data: meal
+      })
+      .then(function (res) {
+        return res;
+      })
+    };
 
     calendar.addCal = function (meal) {
       return $http({
