@@ -3,7 +3,7 @@ angular.module('tinnr.meals', [])
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
-    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     $scope.selectedDay = '';
     $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
     $scope.selectedDay = '';
