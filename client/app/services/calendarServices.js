@@ -23,7 +23,6 @@ angular.module('tinnr.calendarServices', [])
     // };
 
     calendar.addCal = function (meal) {
-      console.log(meal, "meal line 26 calSer.js")
       return $http({
         method: 'POST',
         url: '/api/users/calendar',
