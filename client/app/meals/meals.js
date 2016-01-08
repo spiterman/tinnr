@@ -20,6 +20,9 @@ angular.module('tinnr.meals', [])
     };
 
     $scope.addCal = function(meal){
+      meal.selectedDay = $scope.selectedDay;
+      meal.selectedMeal = $scope.selectedMeal;
+      console.log(meal);
       Calendar.addCal(meal)
         .then(function (res) {
         })

@@ -1,15 +1,16 @@
 <div class="container-fluid main">
   <h1>My calendarMeals</h1>
     <div class="row row-flex" ng-repeat="row in calendarMeals">
-        <div class="col-xs-6 col-md-3 meal" ng-repeat="meal in row">
+        <div class="col-xs-6 col-lg-custom col-md-2 meal"  ng-repeat="meal in row">
           <div class="thumbnail">
             <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
               <img ng-src="{{meal.imageUrlsBySize[90]}}" alt="{{meal.recipeName}}">
             </a>
             <div class="caption">
               <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
-                <h4>{{meal.recipeName}}</h4>
+                <!-- <h4>{{meal.recipeName}}</h4> -->
               </a>
+                <h6>On {{meal.selectedDay}} for {{meal.selectedMeal}}</h5>
             </div>
           </div>
         </div>
