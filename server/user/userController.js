@@ -135,7 +135,6 @@ module.exports = {
             var mealObj = {mealId: mealId.id, recipe: mealId};
             //add mealId.id for lookup and removal
             foundUser.savedRecipes.push(mealObj);
-            console.log(foundUser.savedRecipes)
             Q.ninvoke(foundUser, 'save')
               .then(function() {
                 res.status(200).send();
