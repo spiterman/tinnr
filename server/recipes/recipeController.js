@@ -16,7 +16,7 @@ module.exports = {
     var params = url.parse(req.url).query;
 
     if (url.parse(req.url).query) {
-      var apiUrl = 'http://api.yummly.com/v1/api/recipes?_app_id=' + YUMMLY_API_ID + '&_app_key=' + YUMMLY_API_KEY + '&' + params + '&requirePictures=true';
+      var apiUrl = 'http://api.yummly.com/v1/api/recipes?_app_id=' + YUMMLY_API_ID + '&_app_key=' + YUMMLY_API_KEY + '&' + params + '&requirePictures=true&maxResult=40&start=40';
 
       request(apiUrl, function(err, response, body) {
         if (err) {

@@ -18,6 +18,11 @@ angular.module('tinnr.meals', [])
     $scope.getList = function(ingredients) {
       //send ingredients to server via mealservices
       Meals.getList(ingredients);
+    };
+
+    $scope.removeMeal = function(meal) {
+      //send meal to remove to server
+      Meals.removeMeal(meal);
     }
 
     $scope.getMeals();

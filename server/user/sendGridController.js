@@ -20,7 +20,7 @@ module.exports = {
 	    	//&&send with sendgrid
 			sendgrid.send({
 				  to:       user.username,
-				  from:     'noreply@tinnr.com',
+				  from:     'noreply@tinnrplusplus.com',
 				  subject:  'Your Meal Ingredients',
 				  text:     list
 				}, function(err, json) {
