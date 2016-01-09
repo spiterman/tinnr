@@ -1,44 +1,22 @@
 <div class="container-fluid main">
   <h1>My Calendar</h1>
-<!--     <div class="row row-flex" ng-repeat="row in calendarMeals">
-        <div class="col-xs-6 col-lg-2 col-md-2 meal"  ng-repeat="meal in row">
-          <div class="thumbnail">
-            <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
-              <img ng-src="{{meal.imageUrlsBySize[90]}}" alt="{{meal.recipeName}}">
-            </a>
-            <div class="caption">
-              <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
-              </a>
-                <h6>On {{meal.selectedDay}} for {{meal.selectedMeal}}</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-md-offset-{{offsets}}" ng-if="$last"></div>
-    </div> -->
     <div class="row" ng-show="calendarMeals.length === 0">
       <div class="alert alert-info" role="alert">Select some recipes to get started.</div>
       <a class="btn btn-danger btn-md" href="#" ui-sref="recipes" role="button">Get Started</a>
     </div>
-
     <div ng-repeat="day in daysOfWeek" class="row">
-      <h2> {{day}} </h2>
+      <h2>{{day}}</h2>
       <div ng-repeat="meal in organizedMeals[day]" ng-hide="!meal" class="col-md-4 meal">
-
         <div class="thumbnail">
             <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
               <img ng-src="{{meal.imageUrlsBySize[90]}}" alt="{{meal.recipeName}}">
             </a>
             <div class="caption">
-              <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new">
-                <!-- <h4>{{meal.recipeName}}</h4> -->
-              </a>
-                <h4> {{meal.recipeName}} </h4>
-                <h4>{{meal.selectedMeal}}</h4>
+              <a href="http://www.yummly.com/recipe/external/{{meal.id}}" target="_new"></a>
+              <h4>{{meal.recipeName}}</h4>
+              <h4>{{meal.selectedMeal}}</h4>
             </div>
-          </div>
-
-        <!-- <img ng-src="{{meal.imageUrlsBySize[90]}}" alt="{{meal.recipeName}}"> -->
-
+        </div>
       </div>
     </div>
   </div>
