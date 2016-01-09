@@ -21,7 +21,6 @@ angular.module('tinnr.calendar', [])
       Calendar.removeMeal(meal)
     };
 
-
     $scope.getCalendarMeals();
 
   }]);

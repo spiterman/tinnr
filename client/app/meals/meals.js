@@ -1,5 +1,6 @@
 angular.module('tinnr.meals', [])
-  .controller('MealsController', ['$scope', 'Meals', 'Calendar', function ($scope, Meals, Calendar) {
+
+  .controller('MealsController', ['$scope', 'Meals', '$window', 'Calendar' ,function ($scope, Meals, $window, Calendar) {
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
@@ -7,6 +8,7 @@ angular.module('tinnr.meals', [])
     $scope.selectedDay = '';
     $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
     $scope.selectedDay = '';
+    
 
     $scope.getMeals = function() {
       Meals.getMeals()
@@ -48,6 +50,7 @@ angular.module('tinnr.meals', [])
     $scope.removeMeal = function(meal) {
       //send meal to remove to server
       Meals.removeMeal(meal);
+      $window.location.reload();
     };
 
     $scope.getMeals();
