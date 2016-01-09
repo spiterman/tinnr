@@ -13,8 +13,8 @@ angular.module('tinnr.calendarServices', [])
             console.error('Error: ', res);
         });
     };
-
-    calendar.removeMeal = function() {
+    
+    calendar.removeMeal = function(meal) {
       return $http({
         method: 'POST',
         url: '/api/users/calendar/remove',

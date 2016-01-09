@@ -4,7 +4,7 @@ angular.module('tinnr.meals', [])
     $scope.cols = 4;
     $scope.meals = [];
     $scope.offsets = 0;
-    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     $scope.selectedDay = '';
     $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
     $scope.selectedDay = '';
@@ -26,9 +26,11 @@ angular.module('tinnr.meals', [])
       meal.selectedMeal = $scope.selectedMeal;
       Calendar.addCal(meal)
         .then(function (res) {
+          $scope.alerts.push({type: 'success', msg: 'Meal has been added to your calendar!'});
         })
         .catch(function (error) {
-          console.log(' Error fetch meals', error);
+          $scope.alerts.push({type: 'danger', msg: 'Error saving preferences.'});
+          console.log(' Error saving meal to calendar', error);
         });
     };
 
