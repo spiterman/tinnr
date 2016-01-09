@@ -19,7 +19,10 @@ module.exports = {
       findUser({username: user.username})
         .then(function(foundUser) {
           if (foundUser) {
-            var recipes = foundUser.calendarRecipes;
+            var recipes = [];
+            for(var i = 0; i < foundUser.calendarRecipes.length; i++) {
+              recipes.push(foundUser.calendarRecipes[i].recipe);
+            }
             res.status(200);
             res.json(recipes);
           } else {
@@ -44,16 +47,14 @@ module.exports = {
         .then(function(foundUser) {
           var foundMeal = false;
           for(var i = 0; i < foundUser.calendarRecipes.length; i++){
-            console.log('for loop')
-           if(foundUser.calendarRecipes[i].mealId === mealId.id){
-            console.log('if loop')
+           if(foundUser.calendarRecipes[i].mealId === mealId.mealId){
              foundMeal = true;
            }
          }
-         if (foundUser) {
+         if (foundUser && foundMeal === false) {
            //create mealObj 
            var mealObj = {mealId: mealId.id, recipe: mealId};
-           //add mealId.id for lookup and removal
+           //add mealId.mealId for lookup and removal
            foundUser.calendarRecipes.push(mealObj);
             Q.ninvoke(foundUser, 'save')
               .then(function() {
@@ -86,10 +87,12 @@ module.exports = {
           //iterate through savedRecipes to find index to remove from savedRecipes
           var mealIndex = false;
           for(var i = 0; i < foundUser.calendarRecipes.length; i++){
-            if(foundUser.calendarRecipes[i].mealId === mealId.mealId){
+            console.log(foundUser.calendarRecipes[0], "line 90")
+            if(foundUser.calendarRecipes[i].mealId === mealId.id){
               mealIndex = i;
             }
           }
+          console.log('mealIndex', mealIndex)
           if (foundUser && mealIndex !== false) {
             //splice out meal
             foundUser.calendarRecipes.splice(mealIndex, 1);
