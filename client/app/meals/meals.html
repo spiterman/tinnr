@@ -5,9 +5,9 @@
     <div class="row row-flex">
         <div class="form-group col-xs-6">
         <label for="mealDay">Day</label>
-        <select id="allowedDiet" 
+        <select id="allowedDiet"
                 class="form-control"
-                ng-model="selectedDay" 
+                ng-model="selectedDay"
                 ng-change="getSelectedDay(selectedDay)"
                 >
               <option value={{day}} ng-repeat="day in days">{{day}}</option>
@@ -15,9 +15,9 @@
         </div>
         <div class="form-group col-xs-6">
         <label for="calendar">Meal</label>
-        <select id="timeOfMeal" 
+        <select id="timeOfMeal"
                 class="form-control"
-                ng-model="selectedMeal" 
+                ng-model="selectedMeal"
                 ng-change="getSelectedMeal(selectedMeal)"
                 >
               <option value={{meal}} ng-repeat="meal in threeMeals">{{meal}}</option>
@@ -36,19 +36,19 @@
                 <h4>{{meal.recipeName}}</h4>
               </a>
               <p class="text-muted">Ready in: {{meal.totalTimeInSeconds / 60}} mins</p>
-              <button type="button" 
-                      class="btn btn-default btn-ingredients" 
+              <button type="button"
+                      class="btn btn-default btn-ingredients"
                       ng-click="isCollapsed = !isCollapsed">
                 Ingredients
               </button>
-                <a class="btn btn-primary" ng-click="addCal(meal)" role="button">Add to Cal</a>
-              <button type="button" 
-                      class="btn btn-default btn-ingredients" 
+                <a class="btn btn-primary" ng-click="addCal(meal)" role="button">Add Calendar</a>
+              <button type="button"
+                      class="btn btn-default btn-ingredients"
                       ng-click="getList(meal.ingredients)">
                 Email List
               </button>
-              <button type="button" 
-                      class="btn btn-default" 
+              <button type="button"
+                      class="btn btn-default"
                       ng-click="removeMeal(meal)">
                 Remove Meal
               </button>
