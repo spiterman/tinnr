@@ -14,13 +14,16 @@ angular.module('tinnr.calendarServices', [])
         });
     };
 
-    // calendar.saveMeal = function() {
-
-    // };
-
-    // calendar.deleteMeal = function() {
-
-    // };
+    calendar.removeMeal = function() {
+      return $http({
+        method: 'POST',
+        url: '/api/users/calendar/remove',
+        data: meal
+      })
+      .then( function (res) {
+        return res;
+      })
+    };
 
     calendar.addCal = function (meal) {
       return $http({

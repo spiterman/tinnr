@@ -17,6 +17,10 @@ angular.module('tinnr.calendar', [])
         });
     };
 
+    $scope.removeMeal = function(meal) {
+      Calendar.removeMeal(meal)
+    };
+
     $scope.getCalendarMeals();
 
   }]);
