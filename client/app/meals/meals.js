@@ -8,6 +8,7 @@ angular.module('tinnr.meals', [])
     $scope.selectedDay = '';
     $scope.threeMeals = ['Breakfast', 'Lunch', 'Dinner']
     $scope.selectedDay = '';
+    
 
     $scope.getMeals = function() {
       Meals.getMeals()
@@ -51,6 +52,6 @@ angular.module('tinnr.meals', [])
       Meals.removeMeal(meal);
       $window.location.reload();
     };
-    
+
     $scope.getMeals();
   }]);

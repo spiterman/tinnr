@@ -10,12 +10,12 @@ angular.module('tinnr.calendar', [])
         .then(function (res) {
           $scope.offsets = $scope.cols - (res.data.length % $scope.cols);
           $scope.calendarMeals = _.chunk(res.data, $scope.cols);
+          console.log($scope.calendarMeals, "calMeal")
         })
         .catch(function (error) {
           console.log('Error fetching meals', error);
         });
     };
-
 
     $scope.getCalendarMeals();
 
