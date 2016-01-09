@@ -1,8 +1,13 @@
 var User = require('./userModel.js');
 var Q = require('q');
 var jwt = require('jwt-simple');
+//for development
 var sendgridAPIKEY = require('./emailAPIKey.js');
-var sendgrid  = require('sendgrid')(sendgridAPIKEY.s);
+var sendgrid  = require('sendgrid')(sendgridAPIKEY.apiKEY);
+
+//for deployment
+//var sendgrid  = require('sendgrid')(process.env.SENDGRIDKEY);
+
 
 module.exports = {
 	getList: function(req, res, next) {

@@ -16,8 +16,8 @@ angular.module('tinnr.calendar', [])
         });
     };
 
-    $scope.removeCalendarMeal = function(meal) {
-      Calendar.removeCalendarMeal(meal)
+    $scope.removeMeal = function(meal) {
+      Calendar.removeMeal(meal)
         .then(function (res) {
           $scope.alerts.push({type: 'success', msg: 'Meal has been removed from your calendar!'});
         })
