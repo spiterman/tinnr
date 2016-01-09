@@ -2,8 +2,8 @@
   <alerts></alerts>
   <h1>My Calendar</h1>
     <div class="row" ng-show="calendarMeals.length === 0">
-      <div class="alert alert-info" role="alert">Select some of your meals to get started.</div>
-      <a class="btn btn-danger btn-md" href="#" ui-sref="recipes" role="button">Get Started</a>
+      <div class="alert alert-info" role="alert">Select some meals to get started.</div>
+      <a class="btn btn-danger btn-md" href="#" ui-sref="meals" role="button">Get Started</a>
     </div>
     <div ng-repeat="day in daysOfWeek" class="row">
       <h2>{{day}}</h2>
